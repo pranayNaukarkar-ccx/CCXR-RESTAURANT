@@ -38,5 +38,12 @@ public static List<CCXR_Items__c> getItemList() {
          
       }
 
+    @AuraEnabled(cacheable = true)
+    public static List<CCXR_Feedback__c> getAllFeedback(){
+        List<CCXR_Feedback__c> feedList =[select Name,CCXR_Customer__c,CCXR_Table__c,CCXR_Order__r.Name,
+                                         CCXR_Food_Quality__c, CCXR_Service_Quality__c,CCXR_Suggestions__c
+                                         from  CCXR_Feedback__c where CCXR_Food_Quality__c!= NULL && CCXR_Service_Quality__c!= NULL];
+        return feedList;
+    }
   
 }
