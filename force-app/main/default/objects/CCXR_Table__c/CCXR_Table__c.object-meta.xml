@@ -161,7 +161,9 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>CCXR_Tables</pluralLabel>
-    <searchLayouts></searchLayouts>
+    <searchLayouts>
+        <searchResultsAdditionalFields>CCXR_Capacity__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

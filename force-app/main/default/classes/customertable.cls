@@ -19,5 +19,12 @@ public with sharing class customertable
         RETURN up;
         
     }
+    @AuraEnabled(cacheable=true)
+    public static List<CCXR_Table__c> getAccountNames() {
+      
+      return [SELECT Id,Name FROM CCXR_Table__c where id in(select CCXR_Table__c from CCXR_Customer_Table_Status__c where Customer_Table_Status__c='Waiting') ];
+    }
+
+
 
 }

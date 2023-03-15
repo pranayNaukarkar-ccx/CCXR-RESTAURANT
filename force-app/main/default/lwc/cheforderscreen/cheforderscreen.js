@@ -3,8 +3,7 @@ import getAllAccounts from '@salesforce/apex/customTable.getAllAccounts';
 import updatecheforderstatus from '@salesforce/apex/customTable.updatecheforderstatus';
 import getAccountNames from '@salesforce/apex/customTable.getAccountNames';
 
-export default class Cheforderscreen extends LightningElement{
-    @track buttone1=true;
+export default class Cheforderscreen extends LightningElement {
     @api records;
     @api errors;
     @api itemId;
@@ -20,23 +19,41 @@ export default class Cheforderscreen extends LightningElement{
         this.records = data;
         this.errors = undefined;
     }
+    if(error)
+    {
+        this.errors = error;
+        this.records = undefined;
+        }
     }
     handleSelection(event) 
     {
       this.chefidd = event.target.value;
+      
+      
     }
-    handleButtonClick(event)
-    {
-      this.buttone1=false;
-      //alert('kumar');
-      //this.itemId = event.target.value;
-      //updatecheforderstatus({cat:this.itemId,cat1:this.chefidd})
+     handleButtonClick(event) 
+     {
+        alert('kumaraaa');
+       //this.showButton=false;
+       //this.showButton1=true;
+        alert(this.chefidd);
+       
+        this.itemId = event.target.value;
+       updatecheforderstatus({cat:this.itemId,cat1:this.chefidd})
+          this.handleRefresh();
+        const record = this.records.find((rec) => rec.Id === this.itemId);
+        record.Order_status__c = 'Accepted';
+        record.AcceptButtonDisabled = true;
+        record.ReadyButtonDisabled = false;
+          
     }
     handleButtonClick11(event)
     {
+        
+        this.showButton1=false;
 
-    }
-    connectedCallback() 
+    }   
+  connectedCallback() 
     {
       getAccountNames({accountName:this.itemId})
       .then(result => {
@@ -47,8 +64,12 @@ export default class Cheforderscreen extends LightningElement{
       })
       
     }
+    
+    
     handleMouseOver()
     {
+        
+
       getAccountNames({accountName:this.itemId})
       .then(result => {
         this.accountOptions = result.map(account => ({
@@ -58,4 +79,6 @@ export default class Cheforderscreen extends LightningElement{
       })
 
     }
-  }
+
+    
+}

@@ -19,15 +19,9 @@
                   <th class="" scope="col">
                     <div class="slds-truncate" title="Customer Status Table">Customer Status Table</div>
                   </th>
-                  <td data-label="comosdj">   
-                    <lightning-combobox
-                    options={accountOptions}
-                    onchange={handleSelection}
-                    onmouseover={handleMouseOver}
-                    value={record.Assignedtochef__c}
-                    >
-                  </lightning-combobox>
-                </td >
+                  <th>
+
+                  </th>
                   <th class="" scope="col">
                     <div class="slds-truncate" title="Assigned to">Assigned to</div>
                   </th>
@@ -52,8 +46,17 @@
                           <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Customer__r.No_Of_Persons__c}</a></div>
                         </td>
   
-                        <td data-label="tablestatus">
-                          <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.Customer_Table_Status__c}</a></div>
+                        
+                          <td data-label="comosdj">   
+                            <lightning-combobox
+                            options={accountOptions}
+                            onchange={handleSelection}
+                            onmouseover={handleMouseOver}
+                            
+                            >
+                          </lightning-combobox>
+                        
+
                         </td>
   
                         

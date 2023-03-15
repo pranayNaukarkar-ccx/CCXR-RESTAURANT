@@ -4,6 +4,7 @@
     <columns>NAME</columns>
     <columns>Order_status__c</columns>
     <columns>Assignedtochef__c</columns>
+    <columns>CCXR_Items_ID__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

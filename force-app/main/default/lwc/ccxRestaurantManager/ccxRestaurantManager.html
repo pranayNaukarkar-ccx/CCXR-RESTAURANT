@@ -4,11 +4,11 @@
             
                 <lightning-tab label="Menu" icon-name={iconName1} >
                       Menu Content !<br/>
-                      <lightning-button variant="brand" label="Display Items" onclick={showModalBox} class="slds-m-left_x-small"></lightning-button> 
+                     <!-- <lightning-button variant="brand" label="Display Items" onclick={showModalBox} class="slds-m-left_x-small"></lightning-button> 
                       <c-display-items-screen if:true={showAddItem2Component}></c-display-items-screen>
-                          
+                         --> 
                           <!--<c-ccr-rs2 if:true={displayItemComponent}></c-ccr-rs2>-->
-                        
+                          <c-display-items-screen ></c-display-items-screen>
                 </lightning-tab>
             
             
@@ -57,15 +57,13 @@
  <!--Table-->           
                 <lightning-tab label="Tables" icon-name={iconName3}>
                     Table ! <br/>
-                      <c-table-screen> 
-
-                      </c-table-screen>
+                      <c-ccr-table-content></c-ccr-table-content>
                 </lightning-tab>
 <!--Add Items-->
            
                 <lightning-tab label="Items" icon-name={iconName4}>
-                    <c-main-menu></c-main-menu>
-                    <c-ccr-r-s>  </c-ccr-r-s>
+                    <c-ccr-items-content></c-ccr-items-content>
+                   
                         
                      <!-- <c-ccr-r-s if:true={showAddItem2Component}> </c-ccr-r-s>-->
                       <!-- <div class="slds-grid slds-wrap">

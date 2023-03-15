@@ -8,7 +8,8 @@ public static List<CCXR_Restaurant_Employee__c> getEmployeeList() {
 }
 @AuraEnabled(cacheable=true)
 public static List<CCXR_Items__c> getItemList() {
-    return [SELECT  id,CCXR_Item_Name__c, CCXR_Price__c, CCXR_Item_Status__c,CCXR_Image__c,CCXR_Description__c
+    return [SELECT  id,CCXR_Item_Name__c, CCXR_Price__c, CCXR_Item_Status__c,Item_Image_Link__c,CCXR_Description__c,
+               CCXR_Item_Prep_Time__c,CCXR_Serves__c
              FROM CCXR_Items__c];
 }
 
@@ -28,6 +29,14 @@ public static List<CCXR_Items__c> getItemList() {
           delete delitm;
         
      }
+     @AuraEnabled
+     public static void deleteTable(Id tabRecordId)
+      {
+          list<CCXR_Table__c> delTab=[select Name,id From CCXR_Table__c
+                                   where id=:tabRecordId];
+          delete delTab;
+         
+      }
 
   
 }

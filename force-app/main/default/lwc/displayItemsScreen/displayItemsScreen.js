@@ -28,14 +28,14 @@ export default class displayItemsScreen extends NavigationMixin(LightningElement
 @api recordId;
 
 //1. Veg Starters
-    contacts;
+starters;
     @track itemid;
     @api errors;
     @api imageURL;
     @wire(vegStarters,{})
     wiredContacts({ error, data }) {
         if (data) {
-            this.contacts = data;
+            this.starters = data;
             this.errors = undefined;
         }
         else if (error) 

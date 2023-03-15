@@ -1,6 +1,6 @@
 <template>
     <div class="slds-box slds-theme_shade slds-theme_alert-texture">
-    <div class="backgroundImg" style={getBackgroundImage} >
+    <!--<div class="backgroundImg" style={getBackgroundImage} >-->
 <lightning-tabset class="slds-tabs_default slds-tabs_large"
 style="color: purple">
 
@@ -11,16 +11,16 @@ style="color: purple">
         <lightning-tabset variant="vertical">
             <!--1..1. Starters-->
             <lightning-tab label="Starters">
-                <template if:true={contacts}>
+                <template if:true={starters}>
                     <div class="slds-grid slds-wrap" style="color: aqua;">
-                        <template for:each={contacts} for:item="contact">
-                            <div key={contact.Id} class="slds-col
+                        <template for:each={starters} for:item="starter">
+                            <div key={starter.Id} class="slds-col
                                 slds-size_1-of-3 slds-p-around_medium">
                                 <lightning-card class="image"
-                                    title={contact.CCXR_Item_Name__c} style="color: black;">
+                                    title={starter.CCXR_Item_Name__c} style="color: black;">
 
                                     <lightning-button variant="brand"
-                                        label="Add Item" slot="actions" onclick={handleClick} value={contact.Id}>
+                                        label="Add Item" slot="actions" onclick={handleClick} value={starter.Id}>
         
                                         <lightning-input type="text" label="Customer Order Table" value={OrdRecord.OrderTable} onchange={handleCanChange}>  
                                         </lightning-input>
@@ -28,7 +28,7 @@ style="color: purple">
                                     </lightning-button>
                                         <p slot="footer"><b>Price:</b>  <lightning-icon icon-name="utility:moneybag"
                                             alternative-text="Event"
-                                            size="xx-small"></lightning-icon> <b> {contact.CCXR_Price__c}</b>
+                                            size="xx-small"></lightning-icon> <b> {starter.CCXR_Price__c}</b>
         
                                         </p>
                                         
@@ -36,7 +36,7 @@ style="color: purple">
                                         <div class="slds-size_1-of-2">
                                             <p>
                                                 <img
-                                                src={contact.Item_Image_Link__c}
+                                                src={starter.Item_Image_Link__c}
                                                 alt=" "
                                                 height="60px"
                                                 width="100px"/>
@@ -45,8 +45,8 @@ style="color: purple">
                                         <div class="slds-size_1-of-2">
                                             <p >
                                             
-                                                <b>Estimation Time: {contact.CCXR_Item_Prep_Time__c}<br>
-                                                Serves: {contact.CCXR_Serves__c}<br>
+                                                <b>Estimation Time: {starter.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {starter.CCXR_Serves__c}<br>
                                                 Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
                                                 </b>
                                             </p>
@@ -57,7 +57,7 @@ style="color: purple">
                         </template>
                     </div>
                 </template>
-                <template if:false={contacts}>
+                <template if:false={starters}>
                     <p>No Items found for this account.</p>
                 </template>
             </lightning-tab>
@@ -808,5 +808,5 @@ style="color: purple">
     </lightning-tab>
 </lightning-tabset>
 </div>
-</div>
+<!--</div>-->
 </template>
