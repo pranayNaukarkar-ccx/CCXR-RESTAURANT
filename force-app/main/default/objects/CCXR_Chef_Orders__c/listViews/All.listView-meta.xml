@@ -5,6 +5,11 @@
     <columns>Order_status__c</columns>
     <columns>Assignedtochef__c</columns>
     <columns>CCXR_Items_ID__c</columns>
+    <columns>CCXR_Order_Id__c</columns>
+    <columns>CCXR_Table__c</columns>
+    <columns>button__c</columns>
+    <columns>button1__c</columns>
+    <columns>CCXR_Quantity__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

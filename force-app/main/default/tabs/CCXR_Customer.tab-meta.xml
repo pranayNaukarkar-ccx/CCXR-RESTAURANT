@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Created by Lightning App Builder</description>
+    <flexiPage>CCXR_CUSTOMER_TABLE_STATUS_SCREEN</flexiPage>
+    <label>CCXR_Customer_Table_Status_Screen</label>
+    <motif>Custom24: Building</motif>
+</CustomTab>

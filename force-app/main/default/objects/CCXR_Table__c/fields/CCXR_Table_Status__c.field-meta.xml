@@ -22,11 +22,6 @@
                 <label>Occupied</label>
             </value>
             <value>
-                <fullName>Waiting</fullName>
-                <default>false</default>
-                <label>Waiting</label>
-            </value>
-            <value>
                 <fullName>Reserved</fullName>
                 <default>false</default>
                 <label>Reserved</label>

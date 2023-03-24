@@ -6,6 +6,7 @@
     <columns>OBJECT_ID</columns>
     <columns>CCXR_Customer__c</columns>
     <columns>Customer_Table_Status__c</columns>
+    <columns>Token_Number__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

@@ -4,6 +4,7 @@
     <columns>NAME</columns>
     <columns>CCXR_Capacity__c</columns>
     <columns>CCXR_Table_Status__c</columns>
+    <columns>CCXR_Table_Image__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>
